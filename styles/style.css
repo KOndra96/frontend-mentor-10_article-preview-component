@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --var-color-dark-grayish-blue: hsl(217, 19%, 35%);
+    --var-color-desaturated-dark-blue: hsl(214, 17%, 51%);
+    --var-color-grayish-blue: hsl(212, 23%, 69%);
+    --var-color-light-grayish-blue: hsl(210, 46%, 95%);
+    --var-color-white: hsl(0, 0%, 100%);
+}
+
+html {
+    font-size: 0.8125rem;
+    font-family: "Manrope", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    background-color: var(--var-color-light-grayish-blue, hsl(210, 46%, 95%));
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    max-width: 30rem;
+
+    margin: 2rem;
+
+    border-radius: 1rem;
+
+    background-color: var(--var-color-white, hsl(0, 0%, 100%));
+
+    & header img {
+        display: block;
+
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .content {
+        color: var(--var-color-desaturated-dark-blue, hsl(214, 17%, 51%));
+    }
+
+    & .content,
+    & footer {
+        padding: 1.5rem 3rem;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        
+        padding-top: 0;
+
+        & .author-avatar {            
+            max-width: 3rem;
+    
+            border-radius: 50%;
+        }
+
+        & .metadata {
+            margin-left: 1rem;
+
+            & .author {
+                font-weight: 700;
+
+                color: var(--var-color-dark-grayish-blue, hsl(217, 19%, 35%));
+            }
+
+            & .publish-date {
+                color: var(--var-color-grayish-blue, hsl(212, 23%, 69%));
+            }
+        }
+
+        & .share-button {
+            margin-left: auto;
+
+            padding: 0.75rem;
+
+            border-radius: 50%;
+
+            background-color: var(--var-color-light-grayish-blue, hsl(210, 46%, 95%));
+        }
+    }
+}
+
+h2,
+p {
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+
+    line-height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: var(--var-color-dark-grayish-blue, hsl(217, 19%, 35%));
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+@media screen and (min-width: 55rem) {
+    .card {
+        flex-direction: row;
+
+        max-width: 62.5rem;
+
+        & header, & header img {
+            height: 100%;
+            
+            object-fit: cover;
+        }
+
+        & .content {
+            padding: 3rem;
+            padding-bottom: 0;
+        }
+
+        & footer {
+            padding: 3rem;
+            padding-top: 2rem;
+        }
+    }
+}
+
+
+.attribution {
+    margin-bottom: 1rem;
+
+    text-align: center;
+    font-size: 11px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
