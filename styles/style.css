@@ -96,8 +96,38 @@ body {
             border-radius: 50%;
 
             background-color: var(--var-color-light-grayish-blue, hsl(210, 46%, 95%));
+            
+            &:hover, &:active {
+                opacity: 50%;
+            }
         }
     }
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    transform: translate(70%, -105%);
+
+    padding: 0.75rem 3rem;
+    border-radius: 0.75rem;
+
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+
+    color: var(--var-color-grayish-blue);
+    background-color: var(--var-color-dark-grayish-blue);
+
+    & img {
+        margin-left: 1rem;
+    }
+}
+
+.hide {
+    visibility: hidden;
 }
 
 h2,
@@ -140,6 +170,10 @@ p {
             padding: 3rem;
             padding-top: 2rem;
         }
+    }
+
+    .popup {
+        transform: translate(130%, -100%);
     }
 }
 
